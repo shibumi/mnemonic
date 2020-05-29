@@ -19,6 +19,21 @@ For building from source you need to install `Go`.
 Just clone this repository and execute: `go build -o mnemonic`.
 This should drop a binary in the project directory named `mnemonic`.
 
+## building static binaries for different platforms
+
+### Windows
+
+`CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o mnemonic-windows-amd64.ex`
+
+### Macbook
+
+`CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o mnemonic-apple-amd64`
+
+### Linux
+
+`CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o mnemonic-linux-amd64`
+
+
 ## how to use it
 
 ```
