@@ -37,3 +37,4 @@ On default `mnemonic` will return 3 random words splitted by a space.
 * provide a `-m`, `--max` parameter for setting a characterlimit. Useful for websites with password character limit.
 * tests, tests.. tests
 * build release binaries magically via github actions
+* provide a flag for choosing the language of the used word list
