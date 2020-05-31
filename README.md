@@ -4,10 +4,20 @@
 ## features
 
 * specify number of words
-* different languages:
-      * German
-      * English
+* different languages: English, German
 * specify a delimeter between words
+
+## how to use it
+
+```
+Usage of ./mnemonic:
+  -d string
+        delimeter as split element for the password (default "-")
+  -l string
+        language of word list: [en, de] (default "en")
+  -n uint
+        number of words (default 3)
+```
 
 ## background
 The history of mnemonic starts with the XKCD comic about easy rememberable passwords:
@@ -39,21 +49,6 @@ This should drop a binary in the project directory named `mnemonic`.
 ### Linux
 
 `CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o mnemonic-linux-amd64`
-
-
-## how to use it
-
-```
-Usage of ./mnemonic:
-  -d string
-        delimeter as split element for the password (default "-")
-  -l string
-        language of word list: [en, de] (default "en")
-  -n uint
-        number of words (default 3)
-```
-
-On default `mnemonic` will return 3 random words splitted by a space.
 
 ## todo
 
