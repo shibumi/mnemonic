@@ -43,7 +43,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	numberOfWords := flag.Uint("n", 3, "the number of words")
-	delimeter := flag.String("d", " ", "delimeter as split element for the password")
+	delimeter := flag.String("d", "-", "delimeter as split element for the password")
 	flag.Parse()
 
 	fmt.Println(generatePassword(*numberOfWords, *delimeter, list))
