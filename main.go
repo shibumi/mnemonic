@@ -10,8 +10,16 @@ import (
 	"time"
 )
 
-func newWordList() (list []string, err error) {
-	asset, err := Asset("lists/frequency.txt")
+func newWordList(language string) (list []string, err error) {
+	var assetFile string
+	switch language {
+	case "de":
+		assetFile = "lists/frequency.txt"
+	default:
+		assetFile = "lists/tothink.txt"
+	}
+
+	asset, err := Asset(assetFile)
 	if err != nil {
 		return nil, err
 	}
@@ -38,13 +46,15 @@ func generatePassword(n uint, d string, list []string) (pw string) {
 }
 
 func main() {
-	list, err := newWordList()
+	numberOfWords := flag.Uint("n", 3, "the number of words")
+	delimeter := flag.String("d", "-", "delimeter as split element for the password")
+	language := flag.String("l", "en", "language of word list: [en, de]")
+	flag.Parse()
+
+	list, err := newWordList(*language)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	numberOfWords := flag.Uint("n", 3, "the number of words")
-	delimeter := flag.String("d", "-", "delimeter as split element for the password")
-	flag.Parse()
 
 	fmt.Println(generatePassword(*numberOfWords, *delimeter, list))
 }
