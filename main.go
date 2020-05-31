@@ -46,7 +46,7 @@ func generatePassword(n uint, d string, list []string) (pw string) {
 }
 
 func main() {
-	numberOfWords := flag.Uint("n", 3, "the number of words")
+	numberOfWords := flag.Uint("n", 3, "number of words")
 	delimeter := flag.String("d", "-", "delimeter as split element for the password")
 	language := flag.String("l", "en", "language of word list: [en, de]")
 	flag.Parse()
