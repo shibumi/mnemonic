@@ -6,6 +6,7 @@
 * specify number of words
 * different languages: English, German
 * specify a delimeter between words
+* use an external file as word list
 
 ## how to use it
 
@@ -13,6 +14,8 @@
 Usage of ./mnemonic:
   -d string
         delimeter as split element for the password (default "-")
+  -f string
+        path to external word list
   -l string
         language of word list: [en, de] (default "en")
   -n uint
@@ -56,5 +59,4 @@ This should drop a binary in the project directory named `mnemonic`.
 * provide a `-m`, `--max` parameter for setting a characterlimit. Useful for websites with password character limit.
 * tests, tests.. tests
 * build release binaries magically via github actions
-* specify your own word list via `-f`, `--file` parameter
 * option for generating random numbers as padding/delimeter

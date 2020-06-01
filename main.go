@@ -5,24 +5,33 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"math/rand"
 	"time"
 )
 
-func newWordList(language string) (list []string, err error) {
-	var assetFile string
-	switch language {
-	case "de":
-		assetFile = "lists/frequency.txt"
-	default:
-		assetFile = "lists/tothink.txt"
+func newWordList(language string, file string) (list []string, err error) {
+	var asset []byte
+	if file == "" {
+		var assetFile string
+		switch language {
+		case "de":
+			assetFile = "lists/frequency.txt"
+		default:
+			assetFile = "lists/tothink.txt"
+		}
+		asset, err = Asset(assetFile)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		asset, err = ioutil.ReadFile(file)
+		if err != nil {
+			return nil, err
+		}
 	}
 
-	asset, err := Asset(assetFile)
-	if err != nil {
-		return nil, err
-	}
 	scanner := bufio.NewScanner(bytes.NewReader(asset))
 	scanner.Split(bufio.ScanWords)
 	for scanner.Scan() {
@@ -49,9 +58,10 @@ func main() {
 	numberOfWords := flag.Uint("n", 3, "number of words")
 	delimeter := flag.String("d", "-", "delimeter as split element for the password")
 	language := flag.String("l", "en", "language of word list: [en, de]")
+	file := flag.String("f", "", "path to external word list")
 	flag.Parse()
 
-	list, err := newWordList(*language)
+	list, err := newWordList(*language, *file)
 	if err != nil {
 		log.Fatalln(err)
 	}
