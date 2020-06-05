@@ -60,3 +60,4 @@ This should drop a binary in the project directory named `mnemonic`.
 * tests, tests.. tests
 * build release binaries magically via github actions
 * option for generating random numbers as padding/delimeter
+* option for replacing characters to numbers for leetspeak for example: `hello-dear` to `h3ll0-d34r`
