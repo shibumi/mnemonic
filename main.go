@@ -56,7 +56,7 @@ func generatePassword(n uint, d string, list []string) (pw string) {
 
 func main() {
 	numberOfWords := flag.Uint("n", 3, "number of words")
-	delimeter := flag.String("d", "-", "delimeter as split element for the password")
+	delimiter := flag.String("d", "-", "delimiter as split element for the password")
 	language := flag.String("l", "en", "language of word list: [en, de]")
 	file := flag.String("f", "", "path to external word list")
 	flag.Parse()
@@ -66,5 +66,5 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(generatePassword(*numberOfWords, *delimeter, list))
+	fmt.Println(generatePassword(*numberOfWords, *delimiter, list))
 }
