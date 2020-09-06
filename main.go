@@ -18,6 +18,22 @@ func newWordList(language string, file string) (list []string, err error) {
 		switch language {
 		case "de":
 			assetFile = "data/german.txt"
+		case "cz":
+			assetFile = "data/czech.txt"
+		case "jp":
+			assetFile = "data/japanese.txt"
+		case "kr":
+			assetFile = "data/korean.txt"
+		case "fr":
+			assetFile = "data/french.txt"
+		case "it":
+			assetFile = "data/italian.txt"
+		case "es":
+			assetFile = "data/spanish.txt"
+		case "zh-cn":
+			assetFile = "data/chinese_simplified.txt"
+		case "zh-tw":
+			assetFile = "data/chinese_traditional.txt"
 		default:
 			assetFile = "data/english.txt"
 		}
@@ -57,7 +73,7 @@ func generatePassword(n uint, d string, list []string) (pw string) {
 func main() {
 	numberOfWords := flag.Uint("n", 3, "number of words")
 	delimiter := flag.String("d", "-", "delimiter as split element for the password")
-	language := flag.String("l", "en", "language of word list: [en, de]")
+	language := flag.String("l", "en", "language of word list: [en, de, cz, jp, kr, it, es, fr, zh-cn, zh-tw]")
 	file := flag.String("f", "", "path to external word list")
 	flag.Parse()
 
