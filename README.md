@@ -18,7 +18,7 @@ Usage of ./mnemonic:
   -f string
         path to external word list
   -l string
-        language of word list: [en, de] (default "en")
+        language of word list: [en, de, cz, jp, kr, it, es, fr, zh-cn, zh-tw] (default "en")
   -n uint
         number of words (default 3)
 ```
@@ -56,9 +56,9 @@ This should drop a binary in the project directory named `mnemonic`.
 
 ## todo
 
-* provide more word lists
 * provide a `-m`, `--max` parameter for setting a character limit. Useful for websites with password character limit.
 * tests, tests.. tests
 * build release binaries magically via github actions
 * option for generating random numbers as padding/delimiter
 * option for replacing characters to numbers for leetspeak for example: `hello-dear` to `h3ll0-d34r`
+* make a library out of it
