@@ -5,9 +5,30 @@
 ## features
 
 * specify number of words
-* different languages: English, German
+* support for different languages
 * specify a delimiter between words
 * use an external file as word list
+
+### supported languages
+
+* German
+* English
+* Japanese
+* French
+* Korean
+* Italian
+* Spanish
+* Czech
+* Chinese (simplified)
+* Chinese (traditional)
+
+### roadmap (upcoming features)
+
+* Provide a library to work with (useful for password generators, password stores, etc)
+* Set a max limit for length of words/chars
+* Random numbers as delimiter
+* Leetspeak support eg: `hello-dear` to `h3ll0-d34r`
+* Makefile and automated builds/releases on Github
 
 ## how to use it
 
@@ -53,12 +74,3 @@ This should drop a binary in the project directory named `mnemonic`.
 ### Linux
 
 `CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o mnemonic-linux-amd64`
-
-## todo
-
-* provide a `-m`, `--max` parameter for setting a character limit. Useful for websites with password character limit.
-* tests, tests.. tests
-* build release binaries magically via github actions
-* option for generating random numbers as padding/delimiter
-* option for replacing characters to numbers for leetspeak for example: `hello-dear` to `h3ll0-d34r`
-* make a library out of it
