@@ -17,9 +17,9 @@ func newWordList(language string, file string) (list []string, err error) {
 		var assetFile string
 		switch language {
 		case "de":
-			assetFile = "lists/frequency.txt"
+			assetFile = "data/german.txt"
 		default:
-			assetFile = "lists/tothink.txt"
+			assetFile = "data/english.txt"
 		}
 		asset, err = Asset(assetFile)
 		if err != nil {
