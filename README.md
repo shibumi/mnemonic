@@ -1,4 +1,5 @@
 # mnemonic
+[![build](https://github.com/shibumi/mnemonic/workflows/build/badge.svg)](https://github.com/shibumi/mnemonic/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/shibumi/mnemonic/badge.svg)](https://coveralls.io/github/mnemonic/go-pathspec) [![PkgGoDev](https://pkg.go.dev/badge/github.com/shibumi/mnemonic)](https://pkg.go.dev/github.com/shibumi/mnemonic)  
 `mnemonic` is a diceware alike password generator written in Go.
 
 ## features
