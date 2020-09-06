@@ -26,7 +26,7 @@ Usage of ./mnemonic:
 ## background
 The history of mnemonic starts with the XKCD comic about easy rememberable passwords:
 
-[https://xkcd.com/936/](https://xkcd.com/936/)
+[![https://xkcd.com/936/](https://imgs.xkcd.com/comics/password_strength.png)](https://xkcd.com/936/)
 
 I am aware, that other solutions exist, but most of them are websites.
 Websites are not trustable, even if password generation happens via javascript (evil plugins, that can read your website content).
