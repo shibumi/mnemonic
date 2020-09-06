@@ -5,7 +5,6 @@
 
 package main
 
-
 import (
 	"bytes"
 	"compress/gzip"
@@ -37,7 +36,6 @@ func bindataRead(data []byte, name string) ([]byte, error) {
 
 	return buf.Bytes(), nil
 }
-
 
 type asset struct {
 	bytes []byte
@@ -88,8 +86,6 @@ func bindataDataEnglishtxtBytes() ([]byte, error) {
 	)
 }
 
-
-
 func bindataDataEnglishtxt() (*asset, error) {
 	bytes, err := bindataDataEnglishtxtBytes()
 	if err != nil {
@@ -97,11 +93,11 @@ func bindataDataEnglishtxt() (*asset, error) {
 	}
 
 	info := bindataFileInfo{
-		name: "data/english.txt",
-		size: 13116,
+		name:        "data/english.txt",
+		size:        13116,
 		md5checksum: "",
-		mode: os.FileMode(420),
-		modTime: time.Unix(1599399842, 0),
+		mode:        os.FileMode(420),
+		modTime:     time.Unix(1599399842, 0),
 	}
 
 	a := &asset{bytes: bytes, info: info}
@@ -118,8 +114,6 @@ func bindataDataGermantxtBytes() ([]byte, error) {
 	)
 }
 
-
-
 func bindataDataGermantxt() (*asset, error) {
 	bytes, err := bindataDataGermantxtBytes()
 	if err != nil {
@@ -127,18 +121,17 @@ func bindataDataGermantxt() (*asset, error) {
 	}
 
 	info := bindataFileInfo{
-		name: "data/german.txt",
-		size: 20190,
+		name:        "data/german.txt",
+		size:        20190,
 		md5checksum: "",
-		mode: os.FileMode(420),
-		modTime: time.Unix(1599398201, 0),
+		mode:        os.FileMode(420),
+		modTime:     time.Unix(1599398201, 0),
 	}
 
 	a := &asset{bytes: bytes, info: info}
 
 	return a, nil
 }
-
 
 //
 // Asset loads and returns the asset for the given name.
@@ -231,18 +224,18 @@ func AssetDir(name string) ([]string, error) {
 			node = node.Children[p]
 			if node == nil {
 				return nil, &os.PathError{
-					Op: "open",
+					Op:   "open",
 					Path: name,
-					Err: os.ErrNotExist,
+					Err:  os.ErrNotExist,
 				}
 			}
 		}
 	}
 	if node.Func != nil {
 		return nil, &os.PathError{
-			Op: "open",
+			Op:   "open",
 			Path: name,
-			Err: os.ErrNotExist,
+			Err:  os.ErrNotExist,
 		}
 	}
 	rv := make([]string, 0, len(node.Children))
@@ -252,7 +245,6 @@ func AssetDir(name string) ([]string, error) {
 	return rv, nil
 }
 
-
 type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
@@ -261,7 +253,7 @@ type bintree struct {
 var _bintree = &bintree{Func: nil, Children: map[string]*bintree{
 	"data": {Func: nil, Children: map[string]*bintree{
 		"english.txt": {Func: bindataDataEnglishtxt, Children: map[string]*bintree{}},
-		"german.txt": {Func: bindataDataGermantxt, Children: map[string]*bintree{}},
+		"german.txt":  {Func: bindataDataGermantxt, Children: map[string]*bintree{}},
 	}},
 }}
 
