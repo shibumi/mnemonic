@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"embed"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -10,6 +11,9 @@ import (
 	"math/rand"
 	"time"
 )
+
+//go:embed data
+var assets embed.FS
 
 func newWordList(language string, file string) (list []string, err error) {
 	var asset []byte
@@ -37,7 +41,7 @@ func newWordList(language string, file string) (list []string, err error) {
 		default:
 			assetFile = "data/english.txt"
 		}
-		asset, err = Asset(assetFile)
+		asset, err = assets.ReadFile(assetFile)
 		if err != nil {
 			return nil, err
 		}
