@@ -16,3 +16,10 @@ builds:
     goarch:
       - amd64
     main: .
+source:
+  enabled: true
+signs:
+  - cmd: cosign
+    signature: "${artifact}.sig"
+    args: ["sign-blob", "--oids-issuer=https://token.actions.githubusercontent.com", "--output=${signature}", "${artifact}"]
+    artifacts: all
