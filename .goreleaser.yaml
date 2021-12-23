@@ -27,8 +27,7 @@ checksum:
   name_template: 'checksums.txt'
 
 sboms:
-  - id: default
-    artifacts: archive
+  - artifacts: archive
   - id: source
     artifacts: source
 
@@ -40,7 +39,7 @@ signs:
     signature: "${artifact}.sig"
     certificate: "${artifact}.pem"
     args: ["sign-blob", "--oidc-issuer=https://token.actions.githubusercontent.com", "--output-signature=${signature}", "--output-certificate=${certificate}", "${artifact}"]
-    artifacts: checksum
+    artifacts: all
 
 changelog:
   use: github
