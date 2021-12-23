@@ -27,8 +27,10 @@ checksum:
   name_template: 'checksums.txt'
 
 sboms:
-  - artifacts: archive
-  - artifacts: source
+  - id: default
+    artifacts: archive
+  - id: source
+    artifacts: source
 
 source:
   enabled: true
